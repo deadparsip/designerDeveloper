@@ -6,66 +6,11 @@ $(document).ready(function () {
   var autoComp = $('.autoComp');
   var skillInput = $('.new-skills input');
 
-  /*$('.new-skills input').keyup(function (e) {
-    if (e.keyCode != 13) {
-      var param = $(skillInput).val();
-      if (param.length > 0) {
-        var data = ["adding parsnips", "advocating aardvarks", "wiping a brick", "contemplating dust", "being accurate", "falling down", "not being red", "trying to finance", "having a head"];
-        $(autoComp).slideDown('800', 'linear').empty();
-        var items = [];
-        $.each(data, function (key, val) {
-          items.push('<li><a href="">' + val + '</a></li>');
-        });
-        $(autoComp).append(items.join(''));
-        $('.base-wrapper a').not('.button').click(function (e) {
-          work = false;
-          e.preventDefault();
-          $(skillInput).trigger('focus');
-          $(skillInput).val($(this).text());
-          $(autoComp).slideUp(800, finish).empty();
-        });
-      }
-    }
-  });*/
-
-  /*$(skillInput).keydown(function (e) {
-    switch (e.keyCode) {      
-      case 13:
-        //e.preventDefault();
-        //if ($(autoComp).is(':hidden')) {
-          $('.base-wrapper a.button').click();
-        //}
-        //break;
-      default:
-        work = false;
-        //$('.autoComp li:first-child a').trigger('focus', finish);
-    }
-  });*/
   $(skillInput).keydown(function (e) {
     if (e.keyCode == 13) {      
       skills.viewModel.addSkill();
-	  console.log("esdf");
 	  }
 	  });
-
-  /*$(autoComp).keydown(function (e) {
-    switch (e.keyCode) {
-      case 40:
-        e.preventDefault();
-        $('.autoComp li a:focus').parents('li').next().children('a').trigger('focus');
-        break;
-      case 38:
-        ($('.autoComp li:first-child a').is(':focus')) ? $(skillInput).trigger('focus') : $('.autoComp li a:focus').parents('li').prev().children('a').trigger('focus');
-    }
-  });
-
-  $('.new-skills input').blur(function () {
-    if (work == true) {
-      $(autoComp).slideUp(100);
-    }
-  });
-  */
-
 
   function SkillManager(skills) {
     this.skills = skills || {};
@@ -74,6 +19,7 @@ $(document).ready(function () {
   function Skill(name, experience) {
     this.name = ko.observable(name);
   }
+  
   SkillManager.prototype.init = function () {
     var thisObj = this;
     this.elements = {
@@ -160,6 +106,6 @@ $(document).ready(function () {
   var skills = new SkillManager(initial);
   skills.init();
 
-    ko.applyBindings(new ClickCounterViewModel());
+   <!--ko.applyBindings(new ClickCounterViewModel());-->
 
 });
