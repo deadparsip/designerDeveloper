@@ -150,8 +150,7 @@ var dd = function($) {
 	})();
 	
 	function loadXMLDoc() {
-		var xmlhttp;
-		xmlhttp = new XMLHttpRequest();
+		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function () {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				document.getElementById("ajaxContent").innerHTML = xmlhttp.responseText;
