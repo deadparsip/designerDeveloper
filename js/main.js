@@ -71,7 +71,7 @@ var dd = function($) {
 	
 
 	
-	(function carousel(){
+	/*(function carousel(){
 		//carousel thing - need to tidy!
 		var counter=1,
 			widthOfSlide = $wrapscroll.css('width').split('px'),
@@ -116,7 +116,7 @@ var dd = function($) {
 		});
 		
 		$left.fadeTo("slow", 0.5);
-	})();
+	})();*/
 	
 	var scrollers = (function(){
 		//scrollers
@@ -208,7 +208,7 @@ var dd = function($) {
 	
 	(function toggleClasses(){
 		// toggle css3 classes
-		var toggle = $('#toggleClass'),
+		var toggle = $('.toggleClass'),
 		    test = $('#classListTest')[0];
 			
 		//if (toggle.classList) {			
